@@ -15,6 +15,9 @@ fun main(): Unit = runBlocking {
             println("Will not be printed")
         }
     }
-
+    launch { // this has his own scope
+        delay(2000)
+        println("Will be printed2")
+    }
     delay(3000)
 }

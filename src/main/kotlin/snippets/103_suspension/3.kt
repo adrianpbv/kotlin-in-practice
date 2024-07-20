@@ -7,8 +7,9 @@ suspend fun main() {
     println("Before")
 
     suspendCancellableCoroutine<Unit> { continuation ->
+        // continuation This is the object that we can use to resume the coroutine
         println("Before too")
-        continuation.resume(Unit)
+        continuation.resume(Unit)// resume immediately
     }
 
     println("After")

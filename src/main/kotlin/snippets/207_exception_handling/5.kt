@@ -2,6 +2,11 @@ package f_207_exception_handling.s_5
 
 import kotlinx.coroutines.*
 
+/**
+ * SupervisorScope starts coroutines with a SupervisorJob
+ * This way, exceptions from its children are ignored
+ */
+
 fun main(): Unit = runBlocking {
     supervisorScope {
         launch {

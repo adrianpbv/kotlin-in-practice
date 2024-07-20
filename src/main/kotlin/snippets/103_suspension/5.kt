@@ -15,7 +15,7 @@ suspend fun main() {
     suspendCancellableCoroutine<Unit> { continuation ->
         executor.schedule({
             continuation.resume(Unit)
-        }, 1000, TimeUnit.MILLISECONDS)
+        }, 1000, TimeUnit.MILLISECONDS) // delay the coroutine with the executor
     }
 
     println("After")

@@ -5,6 +5,8 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 
 suspend fun main() {
+    // The async builder behaves just like launch,
+    // but its lambda expression is expected to return a value
     val value1 = GlobalScope.async {
         delay(2000L)
         1
@@ -22,3 +24,9 @@ suspend fun main() {
     print(value2.await())
     print(value3.await())
 }
+// Calculating
+// (2 sec)
+// 123 (order is guaranteed, as we await for values in order)
+
+// It is important to note that the launch and async builders start a coroutine
+// immediately. Both join and await only await the completion of those coroutines.

@@ -10,3 +10,8 @@ fun main() = runBlocking {
       }
   }
 }
+
+/**
+ * when you run it, the program will wait for a second and then print all the dots. The
+ * cost of starting all these coroutines is so cheap that it is barely noticeable.
+ */

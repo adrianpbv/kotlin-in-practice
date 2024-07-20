@@ -3,6 +3,10 @@ package f_210_testing.s_3
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.StandardTestDispatcher
 
+/**
+ * StandardTestDispatcher creates TestCoroutineScheduler by default, so we do not need to do so explicitly.
+ * We can access it with the scheduler property.
+ */
 fun main() {
     val dispatcher = StandardTestDispatcher()
 

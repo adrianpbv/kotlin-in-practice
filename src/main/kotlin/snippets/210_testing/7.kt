@@ -5,6 +5,12 @@ import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlin.random.Random
 import kotlin.system.measureTimeMillis
 
+/**
+ * Adding Thread.sleep will not influence the coroutine with StandardTestDispatcher.
+ * The call to advanceUntilIdle takes only a few milliseconds,
+ * so it does not wait for any real time. It immediately pushes the virtual time
+ * and executes coroutine operations.
+ */
 fun main() {
     val dispatcher = StandardTestDispatcher()
 

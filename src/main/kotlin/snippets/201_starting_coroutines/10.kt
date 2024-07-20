@@ -17,3 +17,9 @@ suspend fun main() {
     println("C")
     println(a + b)
 }
+// A
+// (1 sec)
+// B
+// (1 sec)
+// C
+// 30

@@ -3,6 +3,8 @@ package f_304_hot_cold.s_5
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
+// Flow production happens on demand
+
 private fun makeFlow() = flow {
     println("Flow started")
     for (i in 1..3) {

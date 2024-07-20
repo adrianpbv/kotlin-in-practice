@@ -2,6 +2,11 @@ package f_205_job.s_8
 
 import kotlinx.coroutines.*
 
+/**
+ * join() suspends until a concrete job reaches a final state (either
+ * “Cancelled” or “Completed”).
+ */
+
 fun main(): Unit = runBlocking {
     val job1 = launch {
         delay(1000)
@@ -16,3 +21,9 @@ fun main(): Unit = runBlocking {
     job2.join()
     println("All tests are done")
 }
+
+// (1 sec)
+// Test1
+// (1 sec)
+// Test2
+// All tests are done

@@ -12,6 +12,6 @@ suspend fun main(): Unit = coroutineScope {
         delay(2000)
         println("Text 2")
     }
-    job.complete()
-    job.join()
+    job.complete() // The complete function can be used after we start the last coroutine on a job.
+    job.join()// we can just use the join function to wait for the job to complete.
 }

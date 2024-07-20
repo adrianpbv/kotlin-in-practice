@@ -22,3 +22,9 @@ suspend fun main(): Unit = coroutineScope {
     println("Cancelled successfully")
     delay(1000)
 }
+
+/**
+ * When we cancel a coroutine we often also add join() to wait for the cancellation to finish.
+ * Without this, we would have a race condition, and we would (most likely)
+ * see “Cancelled successfully” before “Cancelled...” and “Finally”.
+ */

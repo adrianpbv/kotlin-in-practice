@@ -5,7 +5,7 @@ import kotlinx.coroutines.*
 suspend fun main() {
     println("Before")
 
-    suspendCancellableCoroutine<Unit> { }
+    suspendCancellableCoroutine<Unit> { } // it supports cancellation and is more testable
 
     println("After")
 }

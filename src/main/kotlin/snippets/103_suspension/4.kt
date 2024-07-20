@@ -10,7 +10,7 @@ suspend fun main() {
     suspendCancellableCoroutine<Unit> { continuation ->
         thread {
             println("Suspended")
-            Thread.sleep(1000)
+            Thread.sleep(1000) // delaying a coroutine
             continuation.resume(Unit)
             println("Resumed")
         }
@@ -18,3 +18,8 @@ suspend fun main() {
 
     println("After")
 }
+
+// Before
+// Suspended
+// After
+// Resumed

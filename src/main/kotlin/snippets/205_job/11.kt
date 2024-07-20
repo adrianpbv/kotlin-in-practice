@@ -12,5 +12,9 @@ suspend fun main(): Unit = coroutineScope {
         delay(2000)
         println("Text 2")
     }
-    job.children.forEach { it.join() }
+    job.children.forEach { it.join() } // join (wait) all the job’s current children.
 }
+
+/**
+ * Effective Kotlin Item 32: Consider factory functions instead of constructors.
+ */

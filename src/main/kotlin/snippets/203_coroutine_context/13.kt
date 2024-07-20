@@ -5,6 +5,10 @@ import kotlinx.coroutines.withContext
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.coroutineContext
 
+// Creating a custom coroutine context.
+// Remember that context is propagated automatically, so whatever is set in the
+// parent coroutine will be available in the child coroutine.
+
 class CounterContext(
     private val name: String
 ) : CoroutineContext.Element {
@@ -41,3 +45,8 @@ suspend fun main(): Unit =
         }
         printNext() // Outer: 3
     }
+
+/**
+ * Custom contexts can be used to pass data or to define some behavior
+ * that should be specific for a specific coroutine.
+ */

@@ -2,6 +2,10 @@ package f_205_job.s_4
 
 import kotlinx.coroutines.*
 
+/**
+ * The parent can reference all its children, and the children can refer to the parent.
+ */
+
 fun main(): Unit = runBlocking {
     val name = CoroutineName("Some name")
     val job = Job()

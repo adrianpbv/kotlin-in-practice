@@ -26,6 +26,6 @@ fun main() {
     for (i in 1..5) {
         print(".")
         testDispatcher.scheduler.advanceTimeBy(1)
-        testDispatcher.scheduler.runCurrent()
+        testDispatcher.scheduler.runCurrent() // execute it after advanceTimeBy()
     }
 }

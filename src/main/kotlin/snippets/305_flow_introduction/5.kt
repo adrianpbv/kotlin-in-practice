@@ -12,6 +12,11 @@ fun usersFlow(): Flow<String> = flow {
     }
 }
 
+/**
+ * Flow’s terminal operations (like collect) suspend a coroutine instead of blocking a thread.
+ * They also support other coroutine functionalities, such as respecting the coroutine context
+ * and handling exceptions
+ */
 suspend fun main() {
     val users = usersFlow()
 
@@ -24,7 +29,7 @@ suspend fun main() {
         launch {
             delay(2100)
             println("I got enough")
-            job.cancel()
+            job.cancel() // launch cancellation also leads to proper flow processing cancellation.
         }
     }
 }

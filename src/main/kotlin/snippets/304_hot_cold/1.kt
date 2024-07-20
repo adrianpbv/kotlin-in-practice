@@ -27,3 +27,11 @@ fun main() {
         "Processed $it"
     }
 }
+
+/**
+ *  cold data streams (like Sequence, Stream or Flow):
+ *   can be infinite;
+ * • do a minimal number of operations;
+ * • use less memory (no need to allocate all the intermediate collections).
+ *
+ */

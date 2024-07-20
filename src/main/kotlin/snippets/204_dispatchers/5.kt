@@ -3,6 +3,15 @@ package f_204_dispatchers.s_5
 import kotlinx.coroutines.*
 import kotlin.system.measureTimeMillis
 
+/**
+ * Dispatchers have a limited number of threads
+ * private val pool = ...
+ * Dispatchers.IO = pool limited to 64
+ * Dispatchers.IO.limitedParallelism(x) = pool limited to x
+ * Dispatchers.Default = pool limited to coresNum
+ * Dispatchers.Default.limitedParallelism(x) =
+ *     Dispatchers.Default limited to x
+ */
 suspend fun main(): Unit = coroutineScope {
     launch {
         printCoroutinesTime(Dispatchers.IO)
@@ -31,3 +40,8 @@ suspend fun printCoroutinesTime(
     }
     println("$dispatcher took: $test")
 }
+
+/**
+ * Dispatchers.Default is limited to the number of cores.
+ * Dispatchers.IO is limited to 64 (or the number of cores)
+ */

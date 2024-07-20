@@ -18,6 +18,7 @@ suspend fun main() {
         println("World!")
     }
     println("Hello,")
+    // we can use join to explicitly await completion of all asynchronous coroutines.
     job1.join()
     job2.join()
     job3.join()

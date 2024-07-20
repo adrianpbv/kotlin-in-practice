@@ -4,6 +4,12 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.*
 
+/**
+ * TestScope collects all exceptions with CoroutineExceptionHandler.
+ * we can also use functions like advanceUntilIdle, advanceTimeBy,
+ * or the currentTime property, all of each is thanks to the scheduler used
+ * by this scope
+ */
 fun main() {
     val scope = TestScope()
 

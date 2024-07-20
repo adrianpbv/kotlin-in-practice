@@ -2,6 +2,12 @@ package f_205_job.s_7
 
 import kotlinx.coroutines.*
 
+/**
+ * Every coroutine has its own state that is managed by its job.
+ * New -> Active -> Completing -> Completed
+ *               ->            -> Cancelling -> Cancelled
+ */
+
 suspend fun main() = coroutineScope {
     // Job created with a builder is active
     val job = Job()
@@ -16,7 +22,7 @@ suspend fun main() = coroutineScope {
     }
     println(activeJob) // StandaloneCoroutine{Active}@ADD
     // here we wait until this job is done
-    activeJob.join() // (1 sec)
+    activeJob.join() // (1 sec) // used to wait for the job to complete.
     println(activeJob) // StandaloneCoroutine{Completed}@ADD
 
     // launch started lazily is in New state

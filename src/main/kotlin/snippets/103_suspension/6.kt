@@ -9,6 +9,10 @@ private val executor =
         Thread(it, "scheduler").apply { isDaemon = true }
     }
 
+/**
+ * Delay function of older Kotlin versions
+ * it uses the same thread for the coroutines using the delay function
+ */
 suspend fun delay(timeMillis: Long): Unit =
     suspendCancellableCoroutine { cont ->
         executor.schedule({

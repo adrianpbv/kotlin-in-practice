@@ -25,3 +25,9 @@ fun main() {
     println(s.find { it > 10 }) // m1 m2 m3 m4 16
     println(s.find { it > 10 }) // m1 m2 m3 m4 16
 }
+
+/**
+ * Hot data streams:
+ * are always ready to be used(each operation can be a terminal operation)
+ * do not need to recalculate the result when used multiple times.
+ */
